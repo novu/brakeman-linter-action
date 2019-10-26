@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'net/http'
-require 'pry'
 require 'json'
 require 'time'
 require_relative './report_adapter'
