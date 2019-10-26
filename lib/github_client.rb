@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class GithubClient
-  def initialize(github_token, user_agent = 'ruby')
+  def initialize(github_token, user_agent: 'ruby')
     @github_token = github_token
     @user_agent = user_agent
   end
@@ -33,8 +33,7 @@ class GithubClient
     http = Net::HTTP.new('api.github.com', 443)
     http.use_ssl = true
     response = yield(http)
-    puts response.message
-    raise response.message if response.code.to_i >= 300
+    raise "#{response.message}: #{response.body}" if response.code.to_i >= 300
 
     JSON.parse(response.body)
   end
