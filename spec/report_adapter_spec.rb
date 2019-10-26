@@ -25,6 +25,6 @@ describe ReportAdapter do
       'end_line' => 1,
       'annotation_level' => 'failure',
       'message' => 'Missing magic comment `# frozen_string_literal: true`.'
-      })
+    })
   end
 end
