@@ -33,7 +33,7 @@ class ReportAdapter
           annotation_list.push({
             'path' => file['path'],
             'start_line' => location['start_line'],
-            'end_line' => location['start_line'],
+            'end_line' => location['last_line'],
             'annotation_level' => annotation_level(offense['severity']),
             'message' => offense['message']
           })
